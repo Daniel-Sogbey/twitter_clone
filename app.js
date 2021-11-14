@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const middleware = require("./middleware");
 const loginRoutes = require("./routes/loginRoutes");
@@ -6,6 +7,8 @@ const app = express();
 
 app.set("view engine", "pug");
 app.set("views", "views");
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/login", loginRoutes);
 
