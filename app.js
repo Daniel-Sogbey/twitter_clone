@@ -1,10 +1,15 @@
 const express = require("express");
+const middleware = require("./middleware");
+const loginRoutes = require("./routes/loginRoutes");
+
 const app = express();
 
 app.set("view engine", "pug");
 app.set("views", "views");
 
-app.get("/", (req, res, next) => {
+app.use("/login", loginRoutes);
+
+app.get("/", middleware.requireLogin, (req, res, next) => {
 	let payload = {
 		pageTitle: "Home",
 	};
