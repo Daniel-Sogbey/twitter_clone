@@ -1,3 +1,9 @@
 extends layouts/login-layout.pug
 block content 
-    h1 login page
+    .loginContainer
+        h1 Login 
+        form(method="post") 
+            input(type="text", name="username", placeholder="Username or Email", required="", autocomplete="off")
+            input(type="password", name="password", placeholder="Password", required="", autocomplete="off")
+            input(type="submit", value="Login")
+        a(href="/register") Don't have an Account ? Register here 
