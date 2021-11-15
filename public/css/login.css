@@ -1,6 +1,7 @@
 :root{
     --blue:#0099ff;
     --font:montserrat;
+    --textSize:14px;
 }
 
 
@@ -45,7 +46,7 @@ input[type="password"] {
     border:0px solid #fff;
     background-color:#f2f2f2;
     font-family:var(--font);
-    font-size:15px;
+    font-size:var(--textSize);
     font-weight:bold;
     border-radius:5px;
 }
@@ -71,6 +72,6 @@ input[type="email"]:focus{
 a {
   text-decoration:none;
   font-family:var(--font);
-  font-size:16px;
+  font-size:var(--textSize);
   font-weight:bold;  
 }

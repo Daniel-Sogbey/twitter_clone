@@ -2,12 +2,25 @@ extends layouts/login-layout.pug
 block content
     .loginContainer 
         h1 Register 
-        form(method="post") 
+        p.errorMessage #{errorMessage}
+        form#registerForm(method="post", onsubmit ="event.preventDefault(); validateForm()") 
             input(type="text", name="firstName", placeholder="First Name", required="", autocomplete="off")
             input(type="text", name="lastName", placeholder="Last Name", required="", autocomplete="off")
             input(type="text", name="username", placeholder="Username", required="", autocomplete="off")
             input(type="email", name="email", placeholder="Email", required="", autocomplete="off")
-            input(type="password", name="password", placeholder="Password", required="", autocomplete="off")
-            input(type="password", name="passwordConf", placeholder="Confirm Password", required="", autocomplete="off")
+            input#password(type="password", name="password", placeholder="Password", required="", autocomplete="off")
+            input#passwordConf(type="password", name="passwordConf", placeholder="Confirm Password", required="", autocomplete="off")
             input(type="submit",value ="Register")
         a(href="/login") Already have an Account ? Login here 
+    script.
+        let passwordField = document.getElementById("password")
+        let passwordConfField = document.getElementById("passwordConf")
+        let form = document.getElementById("registerForm")
+
+        function validateForm () {
+            if(passwordField.value != passwordConfField.value){
+            alert("passwords do not match")
+        }else{
+            form.submit();
+        }
+        }
