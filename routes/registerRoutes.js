@@ -49,7 +49,7 @@ router.post("/", async (req, res, next) => {
 					req.session.user = user;
 					console.log(user);
 					payload.email = user.email;
-					return res.redirect("/", payload);
+					return res.redirect("/");
 				})
 				.catch(err => {
 					console.log(err, "with trying to create user");
