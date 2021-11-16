@@ -1,7 +1,7 @@
 :root{
     --blue:#0099ff;
     --font:montserrat;
-    --textSize:14px;
+    --textSize:15px;
 }
 
 
@@ -74,4 +74,11 @@ a {
   font-family:var(--font);
   font-size:var(--textSize);
   font-weight:bold;  
+}
+
+.errorMessage {
+    color: red;
+    font-family: var(--font);
+    font-size: var(--textSize);
+    font-weight:bolder
 }
