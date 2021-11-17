@@ -48,7 +48,6 @@ router.post("/", async (req, res, next) => {
 				.then(user => {
 					req.session.user = user;
 					console.log(user);
-					payload.email = user.email;
 					return res.redirect("/");
 				})
 				.catch(err => {
